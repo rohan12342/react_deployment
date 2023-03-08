@@ -64,11 +64,11 @@ const Main = ({ activeNote, onUpdateNote, onDeleteNote}) => {
             <button className="button" onClick={DeleteClick}>Delete</button>
             </span>
             </span>
-            <div className = "time">
-                <input type="datetime-local" id = "date_selector" value={formatDate(activeNote.lastModified)} onChange = {(e) => Calenderchange(new Date(e.target.value))}/>
-            </div>
+            
+
             {editMode ? (
             <div className="typer">
+                 <input type="datetime-local" id = "date_selector" value={formatDate(activeNote.lastModified)} onChange = {(e) => Calenderchange(new Date(e.target.value))}/>
                 <ReactQuill id = "edit" value = {activeNote.body} onChange = {(value)=>onEditField('body',value)}/>
             </div>
         ):(

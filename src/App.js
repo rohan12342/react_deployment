@@ -53,6 +53,8 @@ function App() {
     return notes.find(({ id }) => id === activeNote);
   };
 
+  window.history.replaceState({}, 'notes', "/"+activeNote+'/edit')
+
   return (
     <div className="App">
     <button className = "toggle_button" onClick={toggle_sidebar}>&#9776;</button>
