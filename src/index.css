@@ -1,16 +1,217 @@
 body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-li,
-p {
-  margin: 0;
-  padding: 0;
+.App {
+  width: 100%;
+  height: 100vh;
+
 }
-a {
-  color: inherit;
-  text-decoration: none;
+.header{
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  margin-top: 40px;
+  border-bottom: 3px solid lightgray;
+}
+.header h1{
+  margin: 0;
+  text-align: center;
+ 
+}
+.header p{
+  margin-top:0 ;
+}
+
+
+
+button {
+  background: none;
+  cursor: pointer;
+}
+button:hover {
+  color: lightblue;
+}
+
+.below_header{
+  display: flex;
+}
+
+
+.app-sidebar {
+  width: 30%;
+  height: 100vh;
+  border-right: 3px solid lightgray;
+  margin-top: 70px;
+
+
+}
+
+.app-sidebar.hide{
+  display: none;
+}
+
+.app-sidebar-header{
+  display: flex;
+  justify-content: space-between;
+  padding: 25px;
+  border-bottom: 3px solid lightgray;
+}
+.app-sidebar-header button{
+  font-size: 35px;
+}
+.app-sidebar-header h1 {
+  margin: 0;
+}
+
+.app-sidebar-notes {
+  height: calc(100vh - 40px);
+  overflow-y: scroll;
+}
+.app-sidebar-note {
+  padding: 25px;
+  cursor: pointer;
+  border-bottom: 3px solid lightgray;
+}
+.sidebar-note-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.app-sidebar-note p {
+  margin: 10px 0;
+}
+.app-sidebar-note small {
+  display: block;
+  color: #999;
+  text-align: left;
+}
+
+.app-sidebar-note:hover {
+  background: #ddd;
+}
+.app-sidebar-note.active,
+.app-sidebar-note.active small {
+  background: #08c;
+  color: white;
+}
+
+
+
+.app-main {
+  flex: 1;
+  height: 100vh;
+  margin-top: 77px;
+}
+.app-main-note-edit,
+.app-main-note-preview {
+  height: 50vh;
+}
+
+.no-active-note {
+  width: 70%;
+  height: 100vh;
+  line-height: 100vh;
+  text-align: center;
+  font-size: 2rem;
+  color: #999;
+}
+
+.app-main-note-edit {
+  height: 350px;
+  overflow-y: scroll;
+}
+
+.app-main-note-edit input,
+textarea {
+  border: 3px solid lightgray;
+  width: 80%;
+  resize: none;
+  font-size: inherit;
+  font-family: inherit;
+}
+.app-main-note-edit input {
+  height: 40px;
+  font-size: 40px;
+  border: none;
+  padding-bottom: 7px;
+  padding-top: 0px;
+  margin-top: 0px;
+  border-bottom: 3px solid lightgray;
+}
+
+.note-header {
+  justify-content: space-between;
+  align-items: center;
+  border: 3px solid lightgrey;
+  margin-bottom: 10px;
+  font-size: 25px;
+}
+.note-header input{
+  font-size: 25px;
+  border: none;
+
+  
+}
+.note-meta {
+  flex-grow: 1;
+  text-align: right;
+}
+
+
+.button{
+  display: inline-block;
+  color: black;
+  height: 40px;
+  border:none;
+  width: 95px;
+  border-bottom: 3px solid lightgray;
+  
+
+}
+
+
+.button:hover{
+  background: lightblue;
+  color: white;
+}
+
+
+.time{
+  height: 20px;
+  color: black;
+  border: transparent;
+  padding-top: 10px;
+  
+
+  
+}
+#date_selector{
+  color: lightgray;
+  height: 20px;
+  width: 20px;
+}
+
+.editor{
+  border: none;
+}
+.typer{
+  border: none;
+  padding-top: 0px;
+}
+#date_selector{
+  height: 10px;
+  font-size: 20px;
+  width: 250px;
+  color: black;
+}
+
+.toggle_button{
+  cursor: pointer;
+}
+
+#edit{
+  height: 1000px;
 }
