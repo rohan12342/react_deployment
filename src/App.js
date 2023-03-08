@@ -39,21 +39,21 @@ function App() {
   }
 
   const onUpdateNote = (updatedNote) => {
-    const updatedNotesArr = notes.map((note) => {
+    const updateArr = notes.map((note) => {
       if (note.id === updatedNote.id) {
         return updatedNote;
       }
 
       return note;
     });
-    setNotes(updatedNotesArr);
+    setNotes(updateArr);
   };
 
   const getActiveNote = () => {
     return notes.find(({ id }) => id === activeNote);
   };
 
-  window.history.replaceState({}, 'notes', "/"+activeNote+'/edit')
+
 
   return (
     <div className="App">

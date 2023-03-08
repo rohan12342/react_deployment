@@ -12,11 +12,6 @@ const Main = ({ activeNote, onUpdateNote, onDeleteNote}) => {
     const SaveClick = () => {
         seteditMode(false);
     }
-
-    const EditClick = () => {
-        seteditMode(true);
-    }
-
     const Calenderchange = (date) =>{
         const updatedNote = {
             ...activeNote, lastModified: date.getTime(),
@@ -24,10 +19,15 @@ const Main = ({ activeNote, onUpdateNote, onDeleteNote}) => {
         onUpdateNote(updatedNote);
     }
 
+
+    const EditClick = () => {
+        seteditMode(true);
+    }
+
     if (!activeNote) return <div className="no-active-note">No Active Note</div>;
 
     const DeleteClick = () => {
-        if(window.confirm("do you want to delete this note")){
+        if(window.confirm("do you want to delete this note?")){
             onDeleteNote(activeNote.id);
         }
     };
@@ -56,11 +56,11 @@ const Main = ({ activeNote, onUpdateNote, onDeleteNote}) => {
         <span>
             <input type="text" id="title" placeholder="Name your File" value={activeNote.title} onChange={(e) => onEditField("title", e.target.value)} />
             <span id = "add_space_bottom">
-            {editMode ? (
+            {editMode ? 
                 <button className="button" onClick={SaveClick}>Save</button>
-            ):(
+            :
                 <button className="button" onClick={EditClick}>Edit</button>
-            )}
+            }
             <button className="button" onClick={DeleteClick}>Delete</button>
             </span>
             </span>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 
 
 const Sidebar = ({
@@ -26,6 +26,7 @@ const Sidebar = ({
           <div className="app-sidebar-notes">
             {sortedNotes.map(({ id, title, body, lastModified }, i) => (
               <div
+              key={id}
                 className={`app-sidebar-note ${id === activeNote && "active"}`}
                 onClick={() => setActiveNote(id)}
               >
